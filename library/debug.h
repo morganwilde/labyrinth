@@ -1,4 +1,4 @@
-#define DEBUG
+//#define DEBUG
 
 // Debug gridInit() 
 #ifdef DEBUG
@@ -25,7 +25,7 @@
 }
 #endif
 #ifndef DEBUG
-#define DEBUG_QUEUE_INIT(queue) {}
+#define DEBUG_QUEUE_INIT(queue, i) {}
 #endif
 
 #ifdef DEBUG

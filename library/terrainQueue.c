@@ -60,9 +60,6 @@ int queueIn(Queue **queue, Queue *needle, int count) {
     for (i = 0; i < count; i++) {
         if (queue[i]->x == needle->x && queue[i]->y == needle->y) {
             // Found it
-            if (!(queue[i]->counter >= needle->counter)) {
-                //queue[i]->counter = needle->counter;
-            }
             return 1;
         }
     }
@@ -135,7 +132,7 @@ Queue **queueWalk(Queue **queue, int count, int *walks) {
             walk = realloc(walk, sizeof(Queue *) * (countW + 1));
             walk[countW-1] = queueInit(temp->x, temp->y, temp->counter);
         } else {
-            //break;
+            // Continue searching
         }
     }
     (*walks) = countW;

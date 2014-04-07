@@ -40,17 +40,18 @@ int main(void) {
             DEBUG_QUEUE_PRINT(queue, steps);
 
             if (steps > 0) {
-                // Walk the queue back
+                //
+                // Walk the queue backwards
+                //
                 int walks = 0;
                 Queue **walk = queueWalk(queue, steps, &walks);
-                printf("walks: %d\n", walks);
-                queuePrint(walk, walks);
+                DEBUG_QUEUE_PRINT(walk, walks);
             }
         }
 
         // We're done with the grid - delete it
         grid = gridDelete(grid);
-        //DEBUG_GRID_INIT;
+        DEBUG_GRID_INIT;
 
     }
 
