@@ -17,9 +17,14 @@
 #endif
 
 #include "terrainQueue.h"
+#include "interface.h"
 
-int main(void) {
-    FILE *terrain = fopen("data/t.terr", "r");
+int main(int argc, char **argv) {
+	char *terrName = malloc(sizeof(char));
+	char *terrainName = labyrinthFile(terrName);
+	char url[40] = "data/";
+	strcat(url, terrainName);
+	FILE *terrain = fopen(url, "r");
     
     if (terrain) {
         //
@@ -45,7 +50,8 @@ int main(void) {
                 //
                 int walks = 0;
                 Queue **walk = queueWalk(queue, steps, &walks);
-                DEBUG_QUEUE_PRINT(walk, walks);
+                printf("road---->\n");
+				DEBUG_QUEUE_PRINT(walk, walks);
             }
         }
 
